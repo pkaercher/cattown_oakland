@@ -46,6 +46,7 @@ class post:
         self.caption = get_caption(node)
         
         self.hashtags = re.findall(r'(?<=#)\w+', self.caption)
+        self.mentions = re.findall(r'(?<=@)\w+', self.caption)
         self.pic_dim = node['dimensions']
         self.pic_url = node['display_url']
         
